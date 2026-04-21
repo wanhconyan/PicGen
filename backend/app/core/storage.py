@@ -29,6 +29,7 @@ _DEFAULT_DB: dict[str, Any] = {
         "default_quality": "high",
         "default_format": "png",
         "polling_interval_ms": 5000,
+        "open_api_key": "",
     },
 }
 
@@ -101,4 +102,8 @@ def update_settings(patch: dict[str, Any]) -> dict[str, Any]:
 
 def get_settings() -> dict[str, Any]:
     db = read_db()
-    return db.setdefault("settings", {})
+    settings = db.setdefault("settings", {})
+    if "open_api_key" not in settings:
+        settings["open_api_key"] = ""
+        write_db(db)
+    return settings

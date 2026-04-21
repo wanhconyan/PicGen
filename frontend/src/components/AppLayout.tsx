@@ -6,6 +6,7 @@ const links = [
   ['/characters', 'Characters'],
   ['/outfits', 'Outfits'],
   ['/generate', 'Generate'],
+  ['/styles', 'Styles'],
   ['/results', 'Results'],
   ['/review', 'Review'],
   ['/review/history', 'Review History'],

@@ -1,0 +1,51 @@
+{
+  "export": {
+    "id": "export_b695dd55bc",
+    "status": "pending",
+    "created_at": "2026-04-21T03:42:36.282441+00:00",
+    "path": "D:\\AIGame\\PicGen\\exports\\todo9\\result_fbac10ea91.png",
+    "file_name": "result_fbac10ea91.png"
+  },
+  "result": {
+    "id": "result_fbac10ea91",
+    "task_id": "task_f09c151d07",
+    "character_id": "char_15dd3a4442",
+    "outfit_id": null,
+    "review_status": "approved",
+    "score": null,
+    "image_url": "https://picsum.photos/seed/img_8c8fecf494/1024/1024",
+    "metadata": {
+      "task_type": "full_outfit_edit",
+      "source_result_id": "result_90709830a0",
+      "mask_template_id": null,
+      "prompt": ""
+    },
+    "created_at": "2026-04-21T00:41:34.017546+00:00"
+  },
+  "task": {
+    "id": "task_f09c151d07",
+    "type": "full_outfit_edit",
+    "status": "success",
+    "character_id": "char_15dd3a4442",
+    "outfit_ids": [],
+    "style_id": null,
+    "source_result_id": "result_90709830a0",
+    "mask_template_id": null,
+    "prompt": "",
+    "negative_prompt": "",
+    "params": {},
+    "created_at": "2026-04-21T00:41:33.977452+00:00",
+    "updated_at": "2026-04-21T00:41:34.025106+00:00",
+    "result_ids": [
+      "result_fbac10ea91"
+    ]
+  },
+  "review": {
+    "id": "review_96cb6677df",
+    "result_id": "result_fbac10ea91",
+    "decision": "approve",
+    "comment": "ToDo9 regression approve",
+    "scores": {},
+    "created_at": "2026-04-21T03:42:36.250815+00:00"
+  }
+}

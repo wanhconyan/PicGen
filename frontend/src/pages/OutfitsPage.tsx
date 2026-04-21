@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { AsyncState } from '../components/AsyncState';
 import { PaginationBar } from '../components/PaginationBar';
 import { api } from '../services/api';
@@ -14,7 +14,7 @@ export function OutfitsPage() {
   const [name, setName] = useState('');
   const [prompt, setPrompt] = useState('');
 
-  const load = async () => {
+  const load = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -26,11 +26,11 @@ export function OutfitsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page, keyword]);
 
   useEffect(() => {
     void load();
-  }, [page]);
+  }, [load]);
 
   return (
     <div className="page">

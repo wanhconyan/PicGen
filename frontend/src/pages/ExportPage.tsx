@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { AsyncState } from '../components/AsyncState';
 import { useExportActions } from '../hooks/useExportActions';
 import { api } from '../services/api';
-import type { PageResp, Result } from '../types/models';
+import type { ExportItem, PageResp, Result } from '../types/models';
 
 export function ExportPage() {
   const actions = useExportActions();
@@ -11,6 +11,10 @@ export function ExportPage() {
   const [path, setPath] = useState('exports');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [includeMetadata, setIncludeMetadata] = useState(true);
+  const [includeManifest, setIncludeManifest] = useState(true);
+  const [includeThumbnail, setIncludeThumbnail] = useState(false);
+  const [exportFeedback, setExportFeedback] = useState<ExportItem[]>([]);
 
   const load = async () => {
     try {
@@ -34,7 +38,28 @@ export function ExportPage() {
       <h2>Export</h2>
       <div className="card row">
         <input value={path} onChange={(e) => setPath(e.target.value)} placeholder="output path" />
-        <button className="primary" disabled={!selected.length} onClick={() => void actions.batchExport(selected, path).then(() => load())}>
+        <label>
+          <input type="checkbox" checked={includeMetadata} onChange={(e) => setIncludeMetadata(e.target.checked)} /> includeMetadata
+        </label>
+        <label>
+          <input type="checkbox" checked={includeManifest} onChange={(e) => setIncludeManifest(e.target.checked)} /> includeManifest
+        </label>
+        <label>
+          <input type="checkbox" checked={includeThumbnail} onChange={(e) => setIncludeThumbnail(e.target.checked)} /> includeThumbnail
+        </label>
+        <button
+          className="primary"
+          disabled={!selected.length}
+          onClick={() =>
+            void actions
+              .batchExport(selected, path, { includeMetadata, includeManifest, includeThumbnail })
+              .then((resp) => {
+                const data = resp as { items?: ExportItem[] };
+                setExportFeedback(data.items ?? []);
+                return load();
+              })
+          }
+        >
           Batch Export Selected
         </button>
       </div>
@@ -66,7 +91,15 @@ export function ExportPage() {
                     <img src={item.imageUrl} width={80} />
                   </td>
                   <td>
-                    <button onClick={() => void actions.createExport(item.id, path)}>Export</button>
+                    <button
+                      onClick={() =>
+                        void actions
+                          .createExport(item.id, path, { includeMetadata, includeManifest, includeThumbnail })
+                          .then((resp) => setExportFeedback((prev) => [resp as ExportItem, ...prev]))
+                      }
+                    >
+                      Export
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -74,6 +107,29 @@ export function ExportPage() {
           </table>
         </div>
       </AsyncState>
+      {!!exportFeedback.length && (
+        <div className="card" style={{ marginTop: 12 }}>
+          <h3>Export Results</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Path</th>
+              </tr>
+            </thead>
+            <tbody>
+              {exportFeedback.map((exp) => (
+                <tr key={exp.id}>
+                  <td className="mono">{exp.id}</td>
+                  <td>{exp.status}</td>
+                  <td className="mono">{exp.path || exp.errorMessage || '-'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }

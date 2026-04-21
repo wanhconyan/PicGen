@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AsyncState } from '../components/AsyncState';
 import { PaginationBar } from '../components/PaginationBar';
@@ -13,7 +13,7 @@ export function LogsPage() {
   const [totalPages, setTotalPages] = useState(1);
   const [targetType, setTargetType] = useState('');
 
-  const load = async () => {
+  const load = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -25,7 +25,7 @@ export function LogsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page, targetType]);
 
   const jump = (targetTypeValue: string, targetId: string) => {
     if (targetTypeValue === 'result') navigate(`/results/${targetId}`);
@@ -35,7 +35,7 @@ export function LogsPage() {
 
   useEffect(() => {
     void load();
-  }, [page]);
+  }, [load]);
 
   return (
     <div className="page">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AsyncState } from '../components/AsyncState';
 import { PaginationBar } from '../components/PaginationBar';
@@ -14,7 +14,7 @@ export function ResultsPage() {
   const [reviewStatus, setReviewStatus] = useState('');
   const [keyword, setKeyword] = useState('');
 
-  const load = async () => {
+  const load = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -26,11 +26,11 @@ export function ResultsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page, keyword, reviewStatus]);
 
   useEffect(() => {
     void load();
-  }, [page]);
+  }, [load]);
 
   return (
     <div className="page">

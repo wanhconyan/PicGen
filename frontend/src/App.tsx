@@ -15,6 +15,7 @@ import { ResultsPage } from './pages/ResultsPage';
 import { ReviewHistoryPage } from './pages/ReviewHistoryPage';
 import { ReviewPage } from './pages/ReviewPage';
 import { SettingsPage } from './pages/SettingsPage';
+import { StylesPage } from './pages/StylesPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/characters" element={<CharactersPage />} />
         <Route path="/outfits" element={<OutfitsPage />} />
         <Route path="/generate" element={<GeneratePage />} />
+        <Route path="/styles" element={<StylesPage />} />
         <Route path="/results" element={<ResultsPage />} />
         <Route path="/results/:id" element={<ResultDetailPage />} />
         <Route path="/review" element={<ReviewPage />} />

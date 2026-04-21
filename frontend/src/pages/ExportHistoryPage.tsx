@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { AsyncState } from '../components/AsyncState';
 import { PaginationBar } from '../components/PaginationBar';
 import { api } from '../services/api';
@@ -12,7 +12,7 @@ export function ExportHistoryPage() {
   const [keyword, setKeyword] = useState('');
   const [totalPages, setTotalPages] = useState(1);
 
-  const load = async () => {
+  const load = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -24,11 +24,11 @@ export function ExportHistoryPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page, keyword]);
 
   useEffect(() => {
     void load();
-  }, [page]);
+  }, [load]);
 
   return (
     <div className="page">

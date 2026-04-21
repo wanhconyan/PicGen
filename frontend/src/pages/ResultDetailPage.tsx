@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AsyncState } from '../components/AsyncState';
 import { useGenerateActions } from '../hooks/useGenerateActions';
@@ -15,7 +15,7 @@ export function ResultDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const load = async () => {
+  const load = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -27,11 +27,11 @@ export function ResultDetailPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
 
   useEffect(() => {
     if (id) void load();
-  }, [id]);
+  }, [id, load]);
 
   return (
     <div className="page">

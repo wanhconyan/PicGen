@@ -23,7 +23,14 @@ def create_export_api(payload: dict = Body(default={})):
     if not result_id:
         raise HTTPException(status_code=400, detail="resultId is required")
     try:
-        item = create_export(result_id, output_path=data.get("path", "exports"), file_name=data.get("file_name"))
+        item = create_export(
+            result_id,
+            output_path=data.get("path", "exports"),
+            file_name=data.get("file_name"),
+            include_metadata=data.get("include_metadata", True),
+            include_manifest=data.get("include_manifest", True),
+            include_thumbnail=data.get("include_thumbnail", False),
+        )
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     return ok(item)
@@ -35,5 +42,11 @@ def create_batch_export_api(payload: dict = Body(default={})):
     result_ids = data.get("result_ids") or []
     if not result_ids:
         raise HTTPException(status_code=400, detail="resultIds is required")
-    items = batch_export(result_ids, output_path=data.get("path", "exports"))
+    items = batch_export(
+        result_ids,
+        output_path=data.get("path", "exports"),
+        include_metadata=data.get("include_metadata", True),
+        include_manifest=data.get("include_manifest", True),
+        include_thumbnail=data.get("include_thumbnail", False),
+    )
     return ok({"items": items, "count": len(items)})

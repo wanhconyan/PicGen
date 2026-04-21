@@ -1,5 +1,8 @@
+from pathlib import Path
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.core.storage import ensure_db
 from app.routers.base_images import router as base_images_router
@@ -28,6 +31,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+generated_dir = Path(__file__).resolve().parents[1] / "data" / "generated"
+generated_dir.mkdir(parents=True, exist_ok=True)
+app.mount("/generated", StaticFiles(directory=str(generated_dir)), name="generated")
 
 app.include_router(health_router)
 app.include_router(seed_router)

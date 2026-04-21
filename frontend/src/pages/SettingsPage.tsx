@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { AsyncState } from '../components/AsyncState';
 import { api } from '../services/api';
 import { useAppStore } from '../store/appStore';
@@ -8,24 +8,26 @@ export function SettingsPage() {
   const [settings, setSettings] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [openApiKeyInput, setOpenApiKeyInput] = useState('');
 
-  const load = async () => {
+  const load = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
       const data = await api.getSettings();
       setSettings(data);
+      setOpenApiKeyInput('');
       setPollingIntervalMs(Number((data as any).pollingIntervalMs ?? 5000));
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load settings');
     } finally {
       setLoading(false);
     }
-  };
+  }, [setPollingIntervalMs]);
 
   useEffect(() => {
     void load();
-  }, []);
+  }, [load]);
 
   return (
     <div className="page">
@@ -56,12 +58,40 @@ export function SettingsPage() {
           <button
             className="primary"
             onClick={() =>
-              void api.patchSettings(settings).then(() => {
-                setPollingIntervalMs(settings.pollingIntervalMs ?? 5000);
-              })
+              void api
+                .patchSettings(settings)
+                .then((updated) => {
+                  setSettings(updated);
+                  setPollingIntervalMs((updated as any).pollingIntervalMs ?? 5000);
+                })
             }
           >
             Save Settings
+          </button>
+        </div>
+        <div className="card row">
+          <label>
+            OpenAI API Key
+            <input
+              type="password"
+              value={openApiKeyInput}
+              onChange={(e) => setOpenApiKeyInput(e.target.value)}
+              placeholder="sk-..."
+            />
+          </label>
+          <div style={{ alignSelf: 'end', minWidth: 120 }}>
+            状态：{settings?.hasOpenApiKey ? '已配置' : '未配置'}
+          </div>
+          <button
+            className="primary"
+            onClick={() =>
+              void api.patchSettings({ openApiKey: openApiKeyInput }).then((updated) => {
+                setSettings((prev: any) => ({ ...(prev ?? {}), ...(updated as any) }));
+                setOpenApiKeyInput('');
+              })
+            }
+          >
+            保存 API Key
           </button>
         </div>
         <div className="card">

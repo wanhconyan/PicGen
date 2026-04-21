@@ -51,3 +51,21 @@ def update_result(result_id: str, payload: dict = Body(default={})):
     upsert_item("results", item)
     add_event("result.updated", "result", result_id, "Result updated")
     return ok(item)
+
+
+@router.post("/{result_id}/set-preferred")
+def set_preferred_result(result_id: str):
+    item = get_item("results", result_id)
+    if not item:
+        raise HTTPException(status_code=404, detail="Result not found")
+
+    character_id = item.get("character_id")
+    outfit_id = item.get("outfit_id")
+
+    for result in list_items("results"):
+        if result.get("character_id") == character_id and result.get("outfit_id") == outfit_id:
+            result["is_preferred"] = result.get("id") == result_id
+            upsert_item("results", result)
+
+    add_event("result.preferred_set", "result", result_id, "Result set as preferred")
+    return ok(get_item("results", result_id))

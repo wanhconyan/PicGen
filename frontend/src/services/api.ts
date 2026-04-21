@@ -43,14 +43,21 @@ export const api = {
     apiRequest('/characters', { method: 'POST', body: JSON.stringify(snakeify(payload)) }),
 
   listOutfits: (params: Record<string, string | number | undefined>) => apiRequest(`/outfits${q(params)}`),
+  listStyles: (params: Record<string, string | number | undefined>) => apiRequest(`/styles${q(params)}`),
   createOutfit: (payload: Record<string, unknown>) =>
     apiRequest('/outfits', { method: 'POST', body: JSON.stringify(snakeify(payload)) }),
+  createStyle: (payload: Record<string, unknown>) =>
+    apiRequest('/styles', { method: 'POST', body: JSON.stringify(snakeify(payload)) }),
+  updateStyle: (id: string, payload: Record<string, unknown>) =>
+    apiRequest(`/styles/${id}`, { method: 'PATCH', body: JSON.stringify(snakeify(payload)) }),
 
   listMasks: (params: Record<string, string | number | undefined>) => apiRequest(`/masks${q(params)}`),
   createMask: (payload: Record<string, unknown>) =>
     apiRequest('/masks', { method: 'POST', body: JSON.stringify(snakeify(payload)) }),
 
   listBaseImages: (params: Record<string, string | number | undefined>) => apiRequest(`/base-images${q(params)}`),
+  createBaseImage: (payload: Record<string, unknown>) =>
+    apiRequest('/base-images', { method: 'POST', body: JSON.stringify(snakeify(payload)) }),
 
   generate: (payload: Record<string, unknown>) =>
     apiRequest('/tasks/generate', { method: 'POST', body: JSON.stringify(snakeify(payload)) }),
@@ -64,6 +71,7 @@ export const api = {
 
   listResults: (params: Record<string, string | number | undefined>) => apiRequest(`/results${q(params)}`),
   getResult: (id: string) => apiRequest(`/results/${id}`),
+  setPreferredResult: (resultId: string) => apiRequest(`/results/${resultId}/set-preferred`, { method: 'POST' }),
 
   listReviews: (params: Record<string, string | number | undefined>) => apiRequest(`/reviews${q(params)}`),
   reviewDecision: (payload: Record<string, unknown>) =>
