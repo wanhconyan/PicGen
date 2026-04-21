@@ -1,0 +1,865 @@
+{
+  "characters": [
+    {
+      "id": "char_amy",
+      "name": "Amy",
+      "gender": "female",
+      "description": "Demo heroine",
+      "style_tags": [
+        "anime",
+        "fantasy"
+      ],
+      "status": "production_ready",
+      "created_at": "2026-04-20T17:59:25.187233+00:00",
+      "updated_at": "2026-04-20T17:59:25.187233+00:00"
+    },
+    {
+      "id": "char_5fb4e61164",
+      "name": "",
+      "description": "",
+      "gender": "unknown",
+      "style_tags": [],
+      "status": "draft",
+      "created_at": "2026-04-21T00:13:46.402686+00:00",
+      "updated_at": "2026-04-21T00:13:46.402686+00:00"
+    },
+    {
+      "id": "char_ff31b26fd8",
+      "name": "",
+      "description": "",
+      "gender": "unknown",
+      "style_tags": [],
+      "status": "draft",
+      "created_at": "2026-04-21T00:13:46.639682+00:00",
+      "updated_at": "2026-04-21T00:13:46.639682+00:00"
+    },
+    {
+      "id": "char_15dd3a4442",
+      "name": "",
+      "description": "",
+      "gender": "unknown",
+      "style_tags": [],
+      "status": "draft",
+      "created_at": "2026-04-21T00:13:47.297842+00:00",
+      "updated_at": "2026-04-21T00:13:47.297842+00:00"
+    }
+  ],
+  "outfits": [
+    {
+      "id": "outfit_knight",
+      "name": "Knight Armor",
+      "prompt": "silver armor with blue cape",
+      "negative_prompt": "blurry",
+      "tags": [
+        "armor"
+      ],
+      "version": 1,
+      "created_at": "2026-04-20T17:59:25.187233+00:00",
+      "updated_at": "2026-04-20T17:59:25.187233+00:00"
+    }
+  ],
+  "styles": [
+    {
+      "id": "style_clean",
+      "name": "Clean Illustration",
+      "prompt": "clean lines, game concept art",
+      "tags": [
+        "clean",
+        "concept"
+      ],
+      "created_at": "2026-04-20T17:59:25.187233+00:00",
+      "updated_at": "2026-04-20T17:59:25.187233+00:00"
+    }
+  ],
+  "mask_templates": [
+    {
+      "id": "mask_weapon",
+      "name": "Weapon Area",
+      "part": "weapon",
+      "mask_path": "masks/weapon.png",
+      "created_at": "2026-04-20T17:59:25.187233+00:00"
+    }
+  ],
+  "base_images": [],
+  "tasks": [
+    {
+      "id": "task_8e2d76aa1f",
+      "type": "batch_outfit_generate",
+      "status": "success",
+      "character_id": "char_amy",
+      "outfit_ids": [
+        "outfit_knight"
+      ],
+      "style_id": null,
+      "source_result_id": null,
+      "mask_template_id": null,
+      "prompt": "test",
+      "negative_prompt": "",
+      "params": {},
+      "created_at": "2026-04-20T17:59:25.208771+00:00",
+      "updated_at": "2026-04-20T17:59:25.266033+00:00",
+      "result_ids": [
+        "result_79ddc76cc4"
+      ]
+    },
+    {
+      "id": "task_10f5b3d309",
+      "type": "batch_outfit_generate",
+      "status": "success",
+      "character_id": "char_amy",
+      "outfit_ids": [
+        "outfit_knight"
+      ],
+      "style_id": null,
+      "source_result_id": null,
+      "mask_template_id": null,
+      "prompt": "",
+      "negative_prompt": "",
+      "params": {},
+      "created_at": "2026-04-21T00:14:23.671670+00:00",
+      "updated_at": "2026-04-21T00:14:23.724116+00:00",
+      "result_ids": [
+        "result_c1dd7e97a5"
+      ]
+    },
+    {
+      "id": "task_8a54d55427",
+      "type": "batch_outfit_generate",
+      "status": "success",
+      "character_id": "char_15dd3a4442",
+      "outfit_ids": [],
+      "style_id": null,
+      "source_result_id": null,
+      "mask_template_id": null,
+      "prompt": "",
+      "negative_prompt": "",
+      "params": {},
+      "created_at": "2026-04-21T00:14:35.944350+00:00",
+      "updated_at": "2026-04-21T00:14:35.990388+00:00",
+      "result_ids": [
+        "result_d72d7b79d2"
+      ]
+    },
+    {
+      "id": "task_6ef27e5afb",
+      "type": "batch_outfit_generate",
+      "status": "success",
+      "character_id": "char_15dd3a4442",
+      "outfit_ids": [],
+      "style_id": null,
+      "source_result_id": null,
+      "mask_template_id": null,
+      "prompt": "",
+      "negative_prompt": "",
+      "params": {},
+      "created_at": "2026-04-21T00:40:51.197386+00:00",
+      "updated_at": "2026-04-21T00:40:51.247756+00:00",
+      "result_ids": [
+        "result_fc153a53d8"
+      ]
+    },
+    {
+      "id": "task_c296fd5aee",
+      "type": "batch_outfit_generate",
+      "status": "success",
+      "character_id": "char_15dd3a4442",
+      "outfit_ids": [],
+      "style_id": null,
+      "source_result_id": null,
+      "mask_template_id": null,
+      "prompt": "",
+      "negative_prompt": "",
+      "params": {},
+      "created_at": "2026-04-21T00:40:52.186686+00:00",
+      "updated_at": "2026-04-21T00:40:52.236416+00:00",
+      "result_ids": [
+        "result_714f182346"
+      ]
+    },
+    {
+      "id": "task_1d6d93d04f",
+      "type": "rework",
+      "status": "success",
+      "character_id": "char_15dd3a4442",
+      "outfit_ids": [],
+      "style_id": null,
+      "source_result_id": "result_714f182346",
+      "mask_template_id": null,
+      "prompt": "",
+      "negative_prompt": "",
+      "params": {},
+      "created_at": "2026-04-21T00:41:10.109206+00:00",
+      "updated_at": "2026-04-21T00:41:10.157837+00:00",
+      "result_ids": [
+        "result_90709830a0"
+      ]
+    },
+    {
+      "id": "task_d96c9bccab",
+      "type": "rework",
+      "status": "success",
+      "character_id": "char_15dd3a4442",
+      "outfit_ids": [],
+      "style_id": null,
+      "source_result_id": "result_90709830a0",
+      "mask_template_id": null,
+      "prompt": "",
+      "negative_prompt": "",
+      "params": {},
+      "created_at": "2026-04-21T00:41:14.098796+00:00",
+      "updated_at": "2026-04-21T00:41:14.143118+00:00",
+      "result_ids": [
+        "result_d23fdcb842"
+      ]
+    },
+    {
+      "id": "task_030336db18",
+      "type": "local_edit",
+      "status": "success",
+      "character_id": null,
+      "outfit_ids": [],
+      "style_id": null,
+      "source_result_id": "result_90709830a0",
+      "mask_template_id": "mask_weapon",
+      "prompt": "",
+      "negative_prompt": "",
+      "params": {},
+      "created_at": "2026-04-21T00:41:32.270455+00:00",
+      "updated_at": "2026-04-21T00:41:32.315523+00:00",
+      "result_ids": [
+        "result_84e5e3f38e"
+      ]
+    },
+    {
+      "id": "task_f09c151d07",
+      "type": "full_outfit_edit",
+      "status": "success",
+      "character_id": "char_15dd3a4442",
+      "outfit_ids": [],
+      "style_id": null,
+      "source_result_id": "result_90709830a0",
+      "mask_template_id": null,
+      "prompt": "",
+      "negative_prompt": "",
+      "params": {},
+      "created_at": "2026-04-21T00:41:33.977452+00:00",
+      "updated_at": "2026-04-21T00:41:34.025106+00:00",
+      "result_ids": [
+        "result_fbac10ea91"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "result_79ddc76cc4",
+      "task_id": "task_8e2d76aa1f",
+      "character_id": "char_amy",
+      "outfit_id": "outfit_knight",
+      "status": "success",
+      "image_url": "https://picsum.photos/seed/img_7bda23b3cf/1024/1024",
+      "thumb_url": "https://picsum.photos/seed/thumb_3d1e3005c8/1024/1024",
+      "review_status": "approved",
+      "score": null,
+      "metadata": {
+        "task_type": "batch_outfit_generate",
+        "prompt": "test"
+      },
+      "created_at": "2026-04-20T17:59:25.251596+00:00"
+    },
+    {
+      "id": "result_c1dd7e97a5",
+      "task_id": "task_10f5b3d309",
+      "character_id": "char_amy",
+      "outfit_id": "outfit_knight",
+      "status": "success",
+      "image_url": "https://picsum.photos/seed/img_2e57b5e91e/1024/1024",
+      "thumb_url": "https://picsum.photos/seed/thumb_b2865ab830/1024/1024",
+      "review_status": "pending_review",
+      "score": null,
+      "metadata": {
+        "task_type": "batch_outfit_generate",
+        "prompt": ""
+      },
+      "created_at": "2026-04-21T00:14:23.712176+00:00"
+    },
+    {
+      "id": "result_d72d7b79d2",
+      "task_id": "task_8a54d55427",
+      "character_id": "char_15dd3a4442",
+      "outfit_id": null,
+      "status": "success",
+      "image_url": "https://picsum.photos/seed/img_75a6e1a8e0/1024/1024",
+      "thumb_url": "https://picsum.photos/seed/thumb_0fdc684788/1024/1024",
+      "review_status": "pending_review",
+      "score": null,
+      "metadata": {
+        "task_type": "batch_outfit_generate",
+        "prompt": ""
+      },
+      "created_at": "2026-04-21T00:14:35.979253+00:00"
+    },
+    {
+      "id": "result_fc153a53d8",
+      "task_id": "task_6ef27e5afb",
+      "character_id": "char_15dd3a4442",
+      "outfit_id": null,
+      "status": "success",
+      "image_url": "https://picsum.photos/seed/img_350d518766/1024/1024",
+      "thumb_url": "https://picsum.photos/seed/thumb_dc5346c6c4/1024/1024",
+      "review_status": "pending_review",
+      "score": null,
+      "metadata": {
+        "task_type": "batch_outfit_generate",
+        "prompt": ""
+      },
+      "created_at": "2026-04-21T00:40:51.238662+00:00"
+    },
+    {
+      "id": "result_714f182346",
+      "task_id": "task_c296fd5aee",
+      "character_id": "char_15dd3a4442",
+      "outfit_id": null,
+      "status": "success",
+      "image_url": "https://picsum.photos/seed/img_dca212f462/1024/1024",
+      "thumb_url": "https://picsum.photos/seed/thumb_8d13f0bf26/1024/1024",
+      "review_status": "pending_review",
+      "score": null,
+      "metadata": {
+        "task_type": "batch_outfit_generate",
+        "prompt": ""
+      },
+      "created_at": "2026-04-21T00:40:52.225336+00:00"
+    },
+    {
+      "id": "result_90709830a0",
+      "task_id": "task_1d6d93d04f",
+      "character_id": "char_15dd3a4442",
+      "outfit_id": null,
+      "status": "success",
+      "image_url": "https://picsum.photos/seed/img_b07e1b8b1f/1024/1024",
+      "thumb_url": "https://picsum.photos/seed/thumb_9df9143da5/1024/1024",
+      "review_status": "pending_review",
+      "score": null,
+      "metadata": {
+        "task_type": "rework",
+        "source_result_id": "result_714f182346",
+        "mask_template_id": null,
+        "prompt": ""
+      },
+      "created_at": "2026-04-21T00:41:10.147919+00:00"
+    },
+    {
+      "id": "result_d23fdcb842",
+      "task_id": "task_d96c9bccab",
+      "character_id": "char_15dd3a4442",
+      "outfit_id": null,
+      "status": "success",
+      "image_url": "https://picsum.photos/seed/img_8f6bf2c3d2/1024/1024",
+      "thumb_url": "https://picsum.photos/seed/thumb_38b6d80fdd/1024/1024",
+      "review_status": "pending_review",
+      "score": null,
+      "metadata": {
+        "task_type": "rework",
+        "source_result_id": "result_90709830a0",
+        "mask_template_id": null,
+        "prompt": ""
+      },
+      "created_at": "2026-04-21T00:41:14.132867+00:00"
+    },
+    {
+      "id": "result_84e5e3f38e",
+      "task_id": "task_030336db18",
+      "character_id": null,
+      "outfit_id": null,
+      "status": "success",
+      "image_url": "https://picsum.photos/seed/img_0b4938035b/1024/1024",
+      "thumb_url": "https://picsum.photos/seed/thumb_1ad42202f9/1024/1024",
+      "review_status": "pending_review",
+      "score": null,
+      "metadata": {
+        "task_type": "local_edit",
+        "source_result_id": "result_90709830a0",
+        "mask_template_id": "mask_weapon",
+        "prompt": ""
+      },
+      "created_at": "2026-04-21T00:41:32.304843+00:00"
+    },
+    {
+      "id": "result_fbac10ea91",
+      "task_id": "task_f09c151d07",
+      "character_id": "char_15dd3a4442",
+      "outfit_id": null,
+      "status": "success",
+      "image_url": "https://picsum.photos/seed/img_8c8fecf494/1024/1024",
+      "thumb_url": "https://picsum.photos/seed/thumb_86a7481d6f/1024/1024",
+      "review_status": "pending_review",
+      "score": null,
+      "metadata": {
+        "task_type": "full_outfit_edit",
+        "source_result_id": "result_90709830a0",
+        "mask_template_id": null,
+        "prompt": ""
+      },
+      "created_at": "2026-04-21T00:41:34.017546+00:00"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review_9200364e5b",
+      "result_id": "result_79ddc76cc4",
+      "decision": "approve",
+      "comment": "",
+      "scores": {},
+      "created_at": "2026-04-20T17:59:25.334344+00:00"
+    }
+  ],
+  "exports": [
+    {
+      "id": "export_fde85236cd",
+      "result_id": "result_79ddc76cc4",
+      "status": "success",
+      "path": "exports",
+      "file_name": "result_79ddc76cc4.png",
+      "created_at": "2026-04-20T17:59:25.419721+00:00"
+    }
+  ],
+  "event_logs": [
+    {
+      "id": "log_404df32186",
+      "event_type": "seed.completed",
+      "target_type": "system",
+      "target_id": "seed_demo",
+      "message": "Demo data seeded",
+      "metadata": {},
+      "created_at": "2026-04-20T17:59:25.188433+00:00"
+    },
+    {
+      "id": "log_d5492d4574",
+      "event_type": "task.created",
+      "target_type": "task",
+      "target_id": "task_8e2d76aa1f",
+      "message": "Task batch_outfit_generate created",
+      "metadata": {
+        "task_type": "batch_outfit_generate"
+      },
+      "created_at": "2026-04-20T17:59:25.208771+00:00"
+    },
+    {
+      "id": "log_c77d1cd0d2",
+      "event_type": "task.running",
+      "target_type": "task",
+      "target_id": "task_8e2d76aa1f",
+      "message": "Task is running",
+      "metadata": {},
+      "created_at": "2026-04-20T17:59:25.245519+00:00"
+    },
+    {
+      "id": "log_fc07693e74",
+      "event_type": "task.success",
+      "target_type": "task",
+      "target_id": "task_8e2d76aa1f",
+      "message": "Task finished",
+      "metadata": {
+        "result_ids": [
+          "result_79ddc76cc4"
+        ]
+      },
+      "created_at": "2026-04-20T17:59:25.275085+00:00"
+    },
+    {
+      "id": "log_c5d39f97aa",
+      "event_type": "review.created",
+      "target_type": "result",
+      "target_id": "result_79ddc76cc4",
+      "message": "Review decision: approve",
+      "metadata": {
+        "review_id": "review_9200364e5b"
+      },
+      "created_at": "2026-04-20T17:59:25.370670+00:00"
+    },
+    {
+      "id": "log_60398b99ee",
+      "event_type": "export.created",
+      "target_type": "result",
+      "target_id": "result_79ddc76cc4",
+      "message": "Result exported",
+      "metadata": {
+        "export_id": "export_fde85236cd"
+      },
+      "created_at": "2026-04-20T17:59:25.419721+00:00"
+    },
+    {
+      "id": "log_d4e3b3c5f5",
+      "event_type": "character.created",
+      "target_type": "character",
+      "target_id": "char_5fb4e61164",
+      "message": "Character created",
+      "metadata": {},
+      "created_at": "2026-04-21T00:13:46.403700+00:00"
+    },
+    {
+      "id": "log_726aa609ba",
+      "event_type": "character.created",
+      "target_type": "character",
+      "target_id": "char_ff31b26fd8",
+      "message": "Character created",
+      "metadata": {},
+      "created_at": "2026-04-21T00:13:46.641705+00:00"
+    },
+    {
+      "id": "log_8fd0eacb6c",
+      "event_type": "character.created",
+      "target_type": "character",
+      "target_id": "char_15dd3a4442",
+      "message": "Character created",
+      "metadata": {},
+      "created_at": "2026-04-21T00:13:47.298852+00:00"
+    },
+    {
+      "id": "log_5aae84f35a",
+      "event_type": "task.created",
+      "target_type": "task",
+      "target_id": "task_10f5b3d309",
+      "message": "Task batch_outfit_generate created",
+      "metadata": {
+        "task_type": "batch_outfit_generate"
+      },
+      "created_at": "2026-04-21T00:14:23.676338+00:00"
+    },
+    {
+      "id": "log_16d0d38910",
+      "event_type": "task.running",
+      "target_type": "task",
+      "target_id": "task_10f5b3d309",
+      "message": "Task is running",
+      "metadata": {},
+      "created_at": "2026-04-21T00:14:23.700207+00:00"
+    },
+    {
+      "id": "log_c16777c402",
+      "event_type": "task.success",
+      "target_type": "task",
+      "target_id": "task_10f5b3d309",
+      "message": "Task finished",
+      "metadata": {
+        "result_ids": [
+          "result_c1dd7e97a5"
+        ]
+      },
+      "created_at": "2026-04-21T00:14:23.737319+00:00"
+    },
+    {
+      "id": "log_2e00da35e1",
+      "event_type": "task.created",
+      "target_type": "task",
+      "target_id": "task_8a54d55427",
+      "message": "Task batch_outfit_generate created",
+      "metadata": {
+        "task_type": "batch_outfit_generate"
+      },
+      "created_at": "2026-04-21T00:14:35.946450+00:00"
+    },
+    {
+      "id": "log_bee37c6fa3",
+      "event_type": "task.running",
+      "target_type": "task",
+      "target_id": "task_8a54d55427",
+      "message": "Task is running",
+      "metadata": {},
+      "created_at": "2026-04-21T00:14:35.967878+00:00"
+    },
+    {
+      "id": "log_9eb447b8fe",
+      "event_type": "task.success",
+      "target_type": "task",
+      "target_id": "task_8a54d55427",
+      "message": "Task finished",
+      "metadata": {
+        "result_ids": [
+          "result_d72d7b79d2"
+        ]
+      },
+      "created_at": "2026-04-21T00:14:36.000123+00:00"
+    },
+    {
+      "id": "log_e8b5fe73e7",
+      "event_type": "settings.updated",
+      "target_type": "settings",
+      "target_id": "global",
+      "message": "Settings updated",
+      "metadata": {
+        "demo_mode": false,
+        "api_base_url": "https://api.openai.com/v1",
+        "model": "gpt-image-1",
+        "max_concurrency": 3,
+        "default_size": "1024x1024",
+        "default_quality": "high",
+        "default_format": "png",
+        "polling_interval_ms": 5000
+      },
+      "created_at": "2026-04-21T00:40:44.538124+00:00"
+    },
+    {
+      "id": "log_6a3cab93fc",
+      "event_type": "settings.updated",
+      "target_type": "settings",
+      "target_id": "global",
+      "message": "Settings updated",
+      "metadata": {
+        "demo_mode": false,
+        "api_base_url": "https://api.openai.com/v1",
+        "model": "gpt-image-1",
+        "max_concurrency": 3,
+        "default_size": "1024x1024",
+        "default_quality": "high",
+        "default_format": "png",
+        "polling_interval_ms": 5000
+      },
+      "created_at": "2026-04-21T00:40:46.692974+00:00"
+    },
+    {
+      "id": "log_dd4a9000e2",
+      "event_type": "settings.updated",
+      "target_type": "settings",
+      "target_id": "global",
+      "message": "Settings updated",
+      "metadata": {
+        "demo_mode": false,
+        "api_base_url": "https://api.openai.com/v1",
+        "model": "gpt-image-1",
+        "max_concurrency": 3,
+        "default_size": "1024x1024",
+        "default_quality": "high",
+        "default_format": "png",
+        "polling_interval_ms": 5000
+      },
+      "created_at": "2026-04-21T00:40:46.839344+00:00"
+    },
+    {
+      "id": "log_4417b82859",
+      "event_type": "settings.updated",
+      "target_type": "settings",
+      "target_id": "global",
+      "message": "Settings updated",
+      "metadata": {
+        "demo_mode": false,
+        "api_base_url": "https://api.openai.com/v1",
+        "model": "gpt-image-1",
+        "max_concurrency": 3,
+        "default_size": "1024x1024",
+        "default_quality": "high",
+        "default_format": "png",
+        "polling_interval_ms": 5000
+      },
+      "created_at": "2026-04-21T00:40:47.088126+00:00"
+    },
+    {
+      "id": "log_da92524a77",
+      "event_type": "task.created",
+      "target_type": "task",
+      "target_id": "task_6ef27e5afb",
+      "message": "Task batch_outfit_generate created",
+      "metadata": {
+        "task_type": "batch_outfit_generate"
+      },
+      "created_at": "2026-04-21T00:40:51.201466+00:00"
+    },
+    {
+      "id": "log_ff1921367b",
+      "event_type": "task.running",
+      "target_type": "task",
+      "target_id": "task_6ef27e5afb",
+      "message": "Task is running",
+      "metadata": {},
+      "created_at": "2026-04-21T00:40:51.227528+00:00"
+    },
+    {
+      "id": "log_d6ee026fd9",
+      "event_type": "task.success",
+      "target_type": "task",
+      "target_id": "task_6ef27e5afb",
+      "message": "Task finished",
+      "metadata": {
+        "result_ids": [
+          "result_fc153a53d8"
+        ]
+      },
+      "created_at": "2026-04-21T00:40:51.259524+00:00"
+    },
+    {
+      "id": "log_fd749d6a03",
+      "event_type": "task.created",
+      "target_type": "task",
+      "target_id": "task_c296fd5aee",
+      "message": "Task batch_outfit_generate created",
+      "metadata": {
+        "task_type": "batch_outfit_generate"
+      },
+      "created_at": "2026-04-21T00:40:52.189063+00:00"
+    },
+    {
+      "id": "log_c1f57dba41",
+      "event_type": "task.running",
+      "target_type": "task",
+      "target_id": "task_c296fd5aee",
+      "message": "Task is running",
+      "metadata": {},
+      "created_at": "2026-04-21T00:40:52.211863+00:00"
+    },
+    {
+      "id": "log_174afaee9a",
+      "event_type": "task.success",
+      "target_type": "task",
+      "target_id": "task_c296fd5aee",
+      "message": "Task finished",
+      "metadata": {
+        "result_ids": [
+          "result_714f182346"
+        ]
+      },
+      "created_at": "2026-04-21T00:40:52.248340+00:00"
+    },
+    {
+      "id": "log_1c7cab267e",
+      "event_type": "task.created",
+      "target_type": "task",
+      "target_id": "task_1d6d93d04f",
+      "message": "Task rework created",
+      "metadata": {
+        "task_type": "rework"
+      },
+      "created_at": "2026-04-21T00:41:10.111230+00:00"
+    },
+    {
+      "id": "log_c6cecfbb68",
+      "event_type": "task.running",
+      "target_type": "task",
+      "target_id": "task_1d6d93d04f",
+      "message": "Task is running",
+      "metadata": {},
+      "created_at": "2026-04-21T00:41:10.136031+00:00"
+    },
+    {
+      "id": "log_0cc5fd584a",
+      "event_type": "task.success",
+      "target_type": "task",
+      "target_id": "task_1d6d93d04f",
+      "message": "Task finished",
+      "metadata": {
+        "result_ids": [
+          "result_90709830a0"
+        ]
+      },
+      "created_at": "2026-04-21T00:41:10.167021+00:00"
+    },
+    {
+      "id": "log_20f4f870fa",
+      "event_type": "task.created",
+      "target_type": "task",
+      "target_id": "task_d96c9bccab",
+      "message": "Task rework created",
+      "metadata": {
+        "task_type": "rework"
+      },
+      "created_at": "2026-04-21T00:41:14.099812+00:00"
+    },
+    {
+      "id": "log_6262f7804c",
+      "event_type": "task.running",
+      "target_type": "task",
+      "target_id": "task_d96c9bccab",
+      "message": "Task is running",
+      "metadata": {},
+      "created_at": "2026-04-21T00:41:14.122264+00:00"
+    },
+    {
+      "id": "log_955a289c2a",
+      "event_type": "task.success",
+      "target_type": "task",
+      "target_id": "task_d96c9bccab",
+      "message": "Task finished",
+      "metadata": {
+        "result_ids": [
+          "result_d23fdcb842"
+        ]
+      },
+      "created_at": "2026-04-21T00:41:14.151771+00:00"
+    },
+    {
+      "id": "log_c098d69d19",
+      "event_type": "task.created",
+      "target_type": "task",
+      "target_id": "task_030336db18",
+      "message": "Task local_edit created",
+      "metadata": {
+        "task_type": "local_edit"
+      },
+      "created_at": "2026-04-21T00:41:32.272470+00:00"
+    },
+    {
+      "id": "log_58efbf7a8a",
+      "event_type": "task.running",
+      "target_type": "task",
+      "target_id": "task_030336db18",
+      "message": "Task is running",
+      "metadata": {},
+      "created_at": "2026-04-21T00:41:32.294864+00:00"
+    },
+    {
+      "id": "log_a4d3f5ca43",
+      "event_type": "task.success",
+      "target_type": "task",
+      "target_id": "task_030336db18",
+      "message": "Task finished",
+      "metadata": {
+        "result_ids": [
+          "result_84e5e3f38e"
+        ]
+      },
+      "created_at": "2026-04-21T00:41:32.327875+00:00"
+    },
+    {
+      "id": "log_e97429fd66",
+      "event_type": "task.created",
+      "target_type": "task",
+      "target_id": "task_f09c151d07",
+      "message": "Task full_outfit_edit created",
+      "metadata": {
+        "task_type": "full_outfit_edit"
+      },
+      "created_at": "2026-04-21T00:41:33.981539+00:00"
+    },
+    {
+      "id": "log_244322fd9f",
+      "event_type": "task.running",
+      "target_type": "task",
+      "target_id": "task_f09c151d07",
+      "message": "Task is running",
+      "metadata": {},
+      "created_at": "2026-04-21T00:41:34.006251+00:00"
+    },
+    {
+      "id": "log_89381e532f",
+      "event_type": "task.success",
+      "target_type": "task",
+      "target_id": "task_f09c151d07",
+      "message": "Task finished",
+      "metadata": {
+        "result_ids": [
+          "result_fbac10ea91"
+        ]
+      },
+      "created_at": "2026-04-21T00:41:34.034762+00:00"
+    }
+  ],
+  "settings": {
+    "demo_mode": false,
+    "api_base_url": "https://api.openai.com/v1",
+    "model": "gpt-image-1",
+    "max_concurrency": 3,
+    "default_size": "1024x1024",
+    "default_quality": "high",
+    "default_format": "png",
+    "polling_interval_ms": 5000
+  }
+}
