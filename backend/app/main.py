@@ -1,52 +1,28 @@
-from pathlib import Path
+from chatgpt_auth import ChatGPTAuth
+import requests
 
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
+# 初始化鉴权
+auth = ChatGPTAuth()
 
-from app.core.storage import ensure_db
-from app.routers.base_images import router as base_images_router
-from app.routers.characters import router as characters_router
-from app.routers.exports import router as exports_router
-from app.routers.health import router as health_router
-from app.routers.logs import router as logs_router
-from app.routers.masks import router as masks_router
-from app.routers.outfits import router as outfits_router
-from app.routers.reviews import router as reviews_router
-from app.routers.results import router as results_router
-from app.routers.seed import router as seed_router
-from app.routers.settings import router as settings_router
-from app.routers.styles import router as styles_router
-from app.routers.tasks import router as tasks_router
-from app.routers.traces import router as traces_router
+# 方式1：一键自动抓取浏览器登录会话（推荐）
+auth.auto_fetch_chrome_session()
 
-ensure_db()
+# 方式2：手动切换API Key模式
+# auth.set_mode("api")
+# auth.openai_api_key = "sk-xxxxxxxxxxxx"
 
-app = FastAPI(title="PicGen API", version="1.0.0")
+# 调用网页原生画图接口
+def generate_image(prompt, size="1024x1024"):
+    url = "https://chatgpt.com/backend-api/generate_image"
+    data = {
+        "prompt": prompt,
+        "size": size,
+        "generation_mode": "dall_e_3"
+    }
+    resp = requests.post(url, headers=auth.get_image_headers(), json=data)
+    return resp.json()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-generated_dir = Path(__file__).resolve().parents[1] / "data" / "generated"
-generated_dir.mkdir(parents=True, exist_ok=True)
-app.mount("/generated", StaticFiles(directory=str(generated_dir)), name="generated")
-
-app.include_router(health_router)
-app.include_router(seed_router)
-app.include_router(settings_router)
-app.include_router(characters_router)
-app.include_router(outfits_router)
-app.include_router(styles_router)
-app.include_router(masks_router)
-app.include_router(base_images_router)
-app.include_router(tasks_router)
-app.include_router(results_router)
-app.include_router(reviews_router)
-app.include_router(exports_router)
-app.include_router(traces_router)
-app.include_router(logs_router)
+# 测试
+if __name__ == "__main__":
+    res = generate_image("唯美星空动漫壁纸")
+    print(res)
